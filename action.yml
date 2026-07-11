@@ -1,0 +1,35 @@
+name: SafeInstall Trusted Verification
+description: >-
+  Re-runs SafeInstall trust verification against a candidate checkout with an
+  integrity-pinned CLI. Reference this action by full commit SHA only — never
+  by branch or tag. The candidate is treated strictly as data; no code from it
+  is executed.
+author: Mickdownunder
+
+inputs:
+  candidate-path:
+    description: >-
+      Path (relative to the workspace) of the candidate checkout to verify.
+      Check it out with persist-credentials: false. It is read as data only.
+    required: false
+    default: candidate
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+      with:
+        node-version: 22
+
+    # The CLI version and its sha512 are hard-pinned in this repository's
+    # pin.json — outside the calling repository entirely, so a pull request
+    # against the caller cannot weaken them. Bumps happen here, code-owner
+    # reviewed, then the caller bumps the commit SHA it references.
+    - name: Install integrity-pinned verifier CLI
+      shell: bash
+      run: '"$GITHUB_ACTION_PATH/scripts/install-pinned-cli.sh"'
+
+    - name: Verify trust surface (candidate is data, never executed)
+      shell: bash
+      working-directory: ${{ inputs.candidate-path }}
+      run: safeinstall trust status --require-lock

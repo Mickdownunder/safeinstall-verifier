@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "mode": "warn",
+  "files": [
+    {
+      "path": ".claude/settings.json",
+      "kind": "enforcement",
+      "sha256": "d3aee47443d87a8b7f54e6aef81ad1389354e0dd5f65a7b723d9c8a565dc9066",
+      "hiddenUnicode": []
+    },
+    {
+      "path": ".github/workflows/safeinstall-trust.yml",
+      "kind": "enforcement",
+      "sha256": "d657acc24aeff41fca8c81efb54ca39583fd5d7573191b37edd3c82a91727d0f",
+      "hiddenUnicode": []
+    },
+    {
+      "path": "safeinstall.config.json",
+      "kind": "enforcement",
+      "sha256": "1f27c698a22b478806ab88037348e908d75423d9ade4a4067700657fe7c04b4c",
+      "hiddenUnicode": []
+    }
+  ],
+  "mcpServers": [],
+  "approvedAt": "2026-07-11T13:40:16.110Z",
+  "ledgerHead": "9aef05931bd0d9ef7f3b8263dce666b2c53475483ef823016f6bea4d95659873"
+}
