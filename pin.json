@@ -1,6 +1,6 @@
 {
   "name": "safeinstall-cli",
-  "version": "0.14.0",
-  "tarballUrl": "https://registry.npmjs.org/safeinstall-cli/-/safeinstall-cli-0.14.0.tgz",
-  "sha512": "c76848137a1de46a7e1611f006224aab039f4470febf4e573bc4f7eddd0f484384e1525185eab1ece3c541cecff38e50f6c1a5a413f13730b6c97e0a15357cea"
+  "version": "0.16.0",
+  "tarballUrl": "https://registry.npmjs.org/safeinstall-cli/-/safeinstall-cli-0.16.0.tgz",
+  "sha512": "875c97ae758721b5b0324ec47fe20b2b05de0f574e947d1301abb5d55b3667534ef20ea609bffdf0af7dca985e506d96503e422562f90c989e85ec67ccb1aaeb"
 }

@@ -46,8 +46,11 @@ else
   echo "$sha512  $tarball" | shasum -a 512 -c -
 fi
 
+# The tarball bundles its runtime dependencies, so npm fetches nothing else
+# from the registry. No lifecycle script runs: the digest covers the bytes,
+# not what a script would download or execute at install time.
 if [[ -n "$prefix" ]]; then
-  npm install -g --prefix "$prefix" "$tarball"
+  npm install -g --ignore-scripts --prefix "$prefix" "$tarball"
 else
-  npm install -g "$tarball"
+  npm install -g --ignore-scripts "$tarball"
 fi
